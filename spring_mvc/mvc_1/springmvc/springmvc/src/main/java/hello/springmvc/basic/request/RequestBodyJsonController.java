@@ -60,7 +60,6 @@ public class RequestBodyJsonController {
      * @RequestBody 생략 불가능(@ModelAttribute 가 적용되어 버림)
      * HttpMessageConverter 사용 -> MappingJackson2HttpMessageConverter (content-type:
     application/json)
-     *
      */
     @ResponseBody
     @PostMapping("/request-body-json-v3")
