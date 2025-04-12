@@ -11,5 +11,4 @@ class DBConnectionUtilTest {
         Connection connection = DBConnectionUtil.getConnection();
         Assertions.assertThat(connection).isNotNull(); //null이 아닌지 검사
     }
-
 }
