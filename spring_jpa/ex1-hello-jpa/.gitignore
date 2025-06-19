@@ -1,0 +1,38 @@
+# Maven 기본
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# IntelliJ 설정
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# 로그, 환경 파일
+*.log
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# OS 별 임시파일
+.DS_Store
+Thumbs.db
+
+# Java build
+*.class
+*.jar
+*.war
+*.ear
+
+# 환경변수 및 민감 정보 (만약 사용 중이라면)
+/.env
+*.env
