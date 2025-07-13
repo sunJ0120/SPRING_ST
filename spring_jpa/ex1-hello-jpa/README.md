@@ -8,14 +8,26 @@
   자바 ORM 표준 JPA 프로그래밍 공부 기록집
 </h3>
 
----
-
 ## 😎 What JPA?
-
 
 ## 📖 교재
 
-
+<div align = "center">
+  <table border="1">
+  <tr>
+    <th>교재명</th>
+    <th>교재사진</th>
+  </tr>
+    <td>
+      자바 ORM 표준 JPA 프로그래밍
+      <br><br>
+      지은이 : 김영한
+      <br>
+      출판사 : 에이콘
+    </td>
+    <td><img src="https://github.com/user-attachments/assets/d2bb18aa-417a-401b-a1a0-3f2bd5762e96" width=200px></td>
+</table>
+</div>
 
 ## ✅ 챕터별 정리 문서
 <div align="center">
@@ -29,8 +41,6 @@
 
 </div>
 
-
----
 
 ## 📁 폴더 구조
 
