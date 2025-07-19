@@ -4,12 +4,21 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="jpabook">
         <properties>
-            <!-- 필수 속성 -->
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="jakarta.persistence.jdbc.user" value="sa"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- 1) [MariaDB] MariaDB JDBC 드라이버 -->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="org.mariadb.jdbc.Driver"/>
+
+            <!-- 2) [MariaDB] MariaDB URL -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mariadb://localhost:3307/jpadb?useSSL=false&amp;serverTimezone=Asia/Seoul"/>
+
+            <!-- 3) [MariaDB] 계정 정보 -->
+            <property name="jakarta.persistence.jdbc.user" value="jpauser"/>
+            <property name="jakarta.persistence.jdbc.password" value="1234"/>
+
+            <!-- 4) [MariaDB] Hibernate Dialect -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MariaDBDialect"/>
 
             <!-- 옵션 -->
             <property name="hibernate.show_sql" value="true"/>
