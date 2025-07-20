@@ -37,7 +37,10 @@
 | 1    | JPA 소개           |               | [1장. JPA 소개](https://humdrum-lobster-dc7.notion.site/1-JPA-2195ce675819807d8b07e055410f8f24?source=copy_link) | ✅ 완료 |
 | 2    | JPA 시작           |               | [2장. JPA 시작](https://humdrum-lobster-dc7.notion.site/2-JPA-21f5ce675819805a97f5c11e2dc694d0?source=copy_link) | ✅ 완료 |
 | 3    | 영속성 관리         |               | [3장. 영속성 관리](https://humdrum-lobster-dc7.notion.site/3-2245ce675819800e8c15fb114a3a73b0?source=copy_link) | ✅ 완료 |
-| 4    | 엔티티 매핑         |               | [4장. 엔티티 매핑](https://humdrum-lobster-dc7.notion.site/4-22b5ce67581980a3b557fb6150b9faf6?source=copy_link) | 🔃 진행 중 |
+| 4    | 엔티티 매핑         |               | [4장. 엔티티 매핑](https://humdrum-lobster-dc7.notion.site/4-22b5ce67581980a3b557fb6150b9faf6?source=copy_link) | ✅ 완료 |
+| 5    | 연관관계 매핑 기초         |  2025-07-19   | [5장. 연관관계 매핑 기초](https://humdrum-lobster-dc7.notion.site/5-2305ce67581980719a4ae92cb8a99a3e?source=copy_link) | ✅ 완료 |
+| 6    | 다양한 연관관계 매핑        |  2025-07-19   | [6장. 다양한 연관관계 매핑](https://humdrum-lobster-dc7.notion.site/6-2355ce67581980e9bc42f479c53a8c31?source=copy_link) | ✅ 완료 |
+| 7    | 고급 매핑        |   2025-07-20  | [7장. 고급 매핑](https://humdrum-lobster-dc7.notion.site/7-2365ce67581980b7a754d932f9fd64d5?source=copy_link) | ✅ 완료 |
 
 </div>
 
