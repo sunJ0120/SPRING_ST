@@ -41,6 +41,8 @@
 | 5    | 연관관계 매핑 기초         |  2025-07-19   | [5장. 연관관계 매핑 기초](https://humdrum-lobster-dc7.notion.site/5-2305ce67581980719a4ae92cb8a99a3e?source=copy_link) | ✅ 완료 |
 | 6    | 다양한 연관관계 매핑        |  2025-07-19   | [6장. 다양한 연관관계 매핑](https://humdrum-lobster-dc7.notion.site/6-2355ce67581980e9bc42f479c53a8c31?source=copy_link) | ✅ 완료 |
 | 7    | 고급 매핑        |   2025-07-20  | [7장. 고급 매핑](https://humdrum-lobster-dc7.notion.site/7-2365ce67581980b7a754d932f9fd64d5?source=copy_link) | ✅ 완료 |
+| 8    | 프록시와 연관관계 정리        |     | [8장. 프록시와 연관관계 정리](https://humdrum-lobster-dc7.notion.site/8-2375ce6758198096a78bc430f209628b?source=copy_link) | ✅ 완료 |
+| 9    | 값타입        |   2025-07-26  | [9장. 값타입](https://humdrum-lobster-dc7.notion.site/9-2385ce6758198042a89ddb89050c1e1f?source=copy_link) | ✅ 완료 |
 
 </div>
 
