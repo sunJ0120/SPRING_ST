@@ -61,4 +61,58 @@ public class Order {
         orderItem.setOrder(this); // 양방향 연관관계 설정
         //orderItem이 가진 order에 현재 order를 추가한다.
     }
+
+    /*
+    생성 메서드
+
+    - 복잡한 생성 같은 경우는, 이렇게 생성 메서드가 하나 있으면 좋다.
+    - order에 많은 연관관계가 걸려 있으므로, 연관관계를 싹 걸어서 동작한다.
+    - 생성 지점을 변경하면, 이것만 변경하면 되기 때문에 그 부분이 중요하다.
+     */
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+
+        for(OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        }
+
+        order.setStatus(OrderStatus.ORDER); //order 상태이므로, order로 강제한다.
+        order.setOrderDate(LocalDateTime.now());
+        return order;
+    }
+
+    //==비즈니스 로직==//
+    /*
+    주문 취소
+
+    - 수량은 orderItem이 가지고 있는 값이고, 재고 수량을 원복해주는게 중요하므로
+    - orderItem.cancel();을 통해 수량을 복원해준다.
+     */
+    public void cancel() {
+        //이미 배송 상태가 완료 되었을 경우, 취소할 수 없도록 한다.
+        if (delivery.getStatus() == DeliveryStatus.COMP) {
+            throw new IllegalStateException("이미 배송이 완료된 주문은 취소할 수 없습니다.");
+        }
+        this.setStatus(OrderStatus.CANCEL);
+        for(OrderItem orderItem : items) {
+            orderItem.cancel(); // 주문 아이템 취소 & 수량 원복
+        }
+    }
+
+    //==조회 로직==//
+    /*
+    전체 주문 가격 조회
+
+    - 전체 주문 가격을 조회해야 할 때가 있으므로, 이 메서드를 넣어준다.
+    - 주문 아이템의 총 가격은 수량 * 객단가를 해야 하므로, 이 부분 역시 orderItem에서 계산한다.
+     */
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (OrderItem orderItem : items) {
+            totalPrice += orderItem.getTotalPrice(); // 각 주문 아이템의 총 가격을 더한다.
+        }
+        return totalPrice;
+    }
 }
