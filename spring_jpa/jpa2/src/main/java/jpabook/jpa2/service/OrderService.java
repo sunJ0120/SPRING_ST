@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -58,5 +60,15 @@ public class OrderService {
 
         //주문 취소
         order.cancel();
+    }
+
+    /**
+     * 주문 검색
+     *
+     * 여기서 Criteria~ 이름이 아니라 findAllByString 이걸 쓰는게 맞나..싶지만 일단 킵고잉
+     *
+     * */
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
     }
 }

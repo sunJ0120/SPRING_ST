@@ -26,4 +26,18 @@ public class ItemService {
     public Item findOne(Long itemId) {
         return itemRepository.findOne(itemId); // 특정 아이템을 ID로 조회하는 메서드
     }
+
+    /**
+     * 영속성 컨텍스트가 자동 변경
+     *
+     * - find로 찾는다.
+     * - set으로 세팅하면, 자동으로 영속성 관리 된다.
+     */
+    @Transactional
+    public void updateItem(Long id, String name, int price, int stockQuantity){
+        Item item = itemRepository.findOne(id);
+        item.setName(name);
+        item.setPrice(price);
+        item.setStockQuantity(stockQuantity);
+    }
 }
