@@ -58,4 +58,35 @@ public class OrderRepository {
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); //최대1000건
         return query.getResultList();
     }
+
+    // fetch join을 이용한 OrderRepository 추가 코드
+    public List<Order> findAllWithMemberDelivery(){
+        return em.createQuery(
+                "select o from Order o"  +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
+
+    public List<Order> findAllWithItem() {
+        return em.createQuery(
+                "select distinct o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d" +
+                        " join fetch o.items oi" +
+                        " join fetch oi.item i", Order.class)
+                .getResultList();
+    }
+
+    // 페이징 처리된 fetch join을 이용한 OrderRepository 추가 코드
+    // ToOne의 경우는 fetch join으로 처리하고, 컬렉션은 지연로딩을 하되, @BatchSize를 사용하여 최적화한다.
+    public List<Order> findAllWithMemberDelivery(int offset, int limit) {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
+    }
 }

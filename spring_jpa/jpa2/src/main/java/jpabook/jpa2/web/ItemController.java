@@ -1,8 +1,8 @@
 package jpabook.jpa2.web;
 
-import jpabook.jpa1.entity.Item;
-import jpabook.jpa1.entity.item.Book;
-import jpabook.jpa1.service.ItemService;
+import jpabook.jpa2.entity.Item;
+import jpabook.jpa2.entity.item.Book;
+import jpabook.jpa2.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,9 +1,9 @@
 package jpabook.jpa2.web;
 
 import jakarta.validation.Valid;
-import jpabook.jpa1.entity.Address;
-import jpabook.jpa1.entity.Member;
-import jpabook.jpa1.service.MemberService;
+import jpabook.jpa2.entity.Address;
+import jpabook.jpa2.entity.Member;
+import jpabook.jpa2.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +20,12 @@ public class MemberController {
 
     @GetMapping(value = "/members/new")
     public String createForm(Model model){
-        model.addAttribute("memberForm", new jpabook.jpa1.web.MemberForm());
+        model.addAttribute("memberForm", new jpabook.jpa2.web.MemberForm());
         return "members/createMemberForm";
     }
 
     @PostMapping(value = "/members/new")
-    public String create(@Valid jpabook.jpa1.web.MemberForm form, BindingResult result){
+    public String create(@Valid jpabook.jpa2.web.MemberForm form, BindingResult result){
         if (result.hasErrors()){
             return "members/createMemberForm";
         }
