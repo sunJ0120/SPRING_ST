@@ -24,7 +24,7 @@ public class ItemService {
     }
 
     public Item findOne(Long itemId) {
-        return itemRepository.findOne(itemId); // 특정 아이템을 ID로 조회하는 메서드
+        return itemRepository.findById(itemId).orElse(null); // 특정 아이템을 ID로 조회하는 메서드
     }
 
     /**
@@ -35,7 +35,7 @@ public class ItemService {
      */
     @Transactional
     public void updateItem(Long id, String name, int price, int stockQuantity){
-        Item item = itemRepository.findOne(id);
+        Item item = itemRepository.findById(id).orElse(null);
         item.setName(name);
         item.setPrice(price);
         item.setStockQuantity(stockQuantity);
