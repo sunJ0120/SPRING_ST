@@ -29,15 +29,15 @@
 
 ```bash
 SPRING_ST/
-├── spring_mvc/         # 스프링 MVC 1 실습 코드
+├── spring_mvc/            # 스프링 MVC 1 실습 코드
 └── spring_db/
-    └── jdbc/           # 스프링 DB 실습 (JDBC)
+    └── jdbc/              # 스프링 DB 실습 (JDBC)
 └── spring_jpa/
-    └── orm/            # 자바 ORM 표준 JPA 프로그래밍 공부 자료
-    └── jpa1/           # 스프링 부트와 JPA 활용1
-    └── jpa2/           # 스프링 부트와 JPA 활용2
-    └── spring_data_jpa/    # 스프링 데이터 JPA
-    └── query_dsl/      # Query DSL 
-└── spring_security/    # 스프링 시큐리티
-└── spring_cloud_msa/   # Spring Cloud & MSA
+    └── orm/               # 자바 ORM 표준 JPA 프로그래밍 공부 자료
+    └── jpa1/              # 스프링 부트와 JPA 활용1
+    └── jpa2/              # 스프링 부트와 JPA 활용2
+    └── spring_data_jpa/   # 스프링 데이터 JPA
+    └── query_dsl/         # Query DSL 
+└── spring_security/       # 스프링 시큐리티
+└── spring_cloud_msa/      # Spring Cloud & MSA
 ```
