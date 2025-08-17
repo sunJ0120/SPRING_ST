@@ -15,16 +15,16 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.PersistenceUnit;
-import jpabook.query_dsl.dto.MemberDTO;
-import jpabook.query_dsl.dto.QMemberDTO;
-import jpabook.query_dsl.dto.UserDTO;
+import jpabook.query_dsl.dto.*;
 import jpabook.query_dsl.entity.Member;
 import jpabook.query_dsl.entity.QMember;
 import jpabook.query_dsl.entity.QTeam;
 import jpabook.query_dsl.entity.Team;
 
+import jpabook.query_dsl.repository.MemberJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,6 +49,8 @@ public class QuerydslBasicTest {
     // Querydsl을 사용하기 위해 JPAQueryFactory를 생성한다.
     // 이렇게 JPAQueryFactory를 필드로 빼는 것도 가능하다.
     JPAQueryFactory queryFactory;
+    @Autowired
+    private MemberJpaRepository memberJpaRepository;
 
     //@BeforeEach를 통해 테스트 객체를 초기화 한다.
     @BeforeEach
@@ -863,5 +865,20 @@ public class QuerydslBasicTest {
 
         //then
 
+    }
+
+    @Test
+    public void searchTest() throws Exception {
+        //given
+        MemberSearchCondition condition = new MemberSearchCondition();
+        condition.setAgeGoe(35);
+        condition.setAgeLoe(40);
+        condition.setTeamName("teamB");
+
+        //when
+        List<MemberTeamDto> result = memberJpaRepository.searchByBuilder(condition);
+
+        //then
+        assertThat(result).extracting("username").containsExactly("member4");
     }
 }
