@@ -1,16 +1,16 @@
 package this_is_java.multi_thread;
 
-public class ThreadA extends Thread {
+public class ThreadB extends Thread {
   private WorkObject workObject;
 
-  public ThreadA(WorkObject workObject) {
-    setName("ThreadA");
+  public ThreadB(WorkObject workObject) {
+    setName("ThreadB");
     this.workObject = workObject;
   }
 
   public void run(){
     for (int i = 1; i <= 10; i++) {
-      workObject.methodA();
+      workObject.methodB();
     }
   }
 }
